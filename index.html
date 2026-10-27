@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Portfólio de Luis Gustavo Prata Braga Saldanha, estudante de Engenharia de Software em Rio Verde (GO).">
+<title>Luis Gustavo Saldanha</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Source+Sans+3:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Conceito: "mise en place". Tudo no seu lugar, como numa mesa bem servida.
+   Coluna única, rótulos à esquerda, listas com pontilhado de cardápio nas habilidades. */
+:root {
+  --bg: #F3F5F8;
+  --surface: #FFFFFF;
+  --ink: #12203A;
+  --muted: #55607A;
+  --line: #D9DEE8;
+  --accent: #8A1F3D;
+  --accent-ink: #FFFFFF;
+  --accent-soft: #F6E6EB;
+  --ok: #1B6B4A;
+  --ok-soft: #E1F1E9;
+  --font-display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --font-body: "Source Sans 3", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0E1422; --surface: #161F33; --ink: #E7ECF5; --muted: #A2ADC4; --line: #2A3650;
+    --accent: #F2A3B8; --accent-ink: #1A0A10; --accent-soft: #3A1B28;
+    --ok: #7FD4A8; --ok-soft: #14301F;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0E1422; --surface: #161F33; --ink: #E7ECF5; --muted: #A2ADC4; --line: #2A3650;
+  --accent: #F2A3B8; --accent-ink: #1A0A10; --accent-soft: #3A1B28;
+  --ok: #7FD4A8; --ok-soft: #14301F;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: var(--font-body); font-size: 17px; line-height: 1.6;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 0;
+}
+a { color: var(--accent); text-underline-offset: 3px; }
+a:focus-visible, button:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+.wrap { max-width: 940px; margin: 0 auto; padding-block: 56px 40px; }
+
+/* Cabeçalho */
+.eyebrow { font-family: var(--font-mono); font-size: 13px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin: 0 0 14px; }
+h1 { font-family: var(--font-display); font-weight: 800; font-size: clamp(38px, 7vw, 68px); line-height: 1.02; letter-spacing: -.02em; margin: 0 0 18px; text-wrap: balance; }
+.lead { font-size: clamp(18px, 2.4vw, 22px); line-height: 1.5; max-width: 38em; margin: 0 0 22px; color: var(--ink); }
+.status { display: inline-flex; flex-wrap: wrap; gap: 8px; margin: 0 0 26px; padding: 0; list-style: none; }
+.status li { background: var(--ok-soft); color: var(--ok); font-weight: 600; font-size: 14px; padding: 4px 12px; border-radius: 999px; }
+.actions { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+.btn { display: inline-flex; align-items: center; gap: 8px; font: inherit; font-weight: 600; font-size: 16px; text-decoration: none; padding: 11px 18px; border-radius: 8px; border: 1.5px solid var(--accent); cursor: pointer; }
+.btn.primary { background: var(--accent); color: var(--accent-ink); }
+.btn.ghost { background: transparent; color: var(--accent); }
+.btn:hover { filter: brightness(1.08); }
+.mail { display: inline-flex; flex-wrap: wrap; gap: 8px; align-items: center; font-family: var(--font-mono); font-size: 14px; }
+.mail code { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 9px 12px; user-select: all; overflow-wrap: anywhere; }
+.mail button { font: inherit; font-family: var(--font-body); font-weight: 600; font-size: 14px; background: transparent; color: var(--accent); border: 1.5px solid var(--accent); border-radius: 8px; padding: 8px 12px; cursor: pointer; }
+
+/* Seções */
+section { display: grid; grid-template-columns: 180px minmax(0, 1fr); gap: 12px 40px; padding-block: 36px; border-top: 1px solid var(--line); }
+section > h2 { font-family: var(--font-mono); font-size: 13px; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin: 4px 0 0; }
+.body > :first-child { margin-top: 0; }
+.body p { margin: 0 0 14px; max-width: 40em; }
+
+/* Projetos */
+.project { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 22px 24px; display: grid; gap: 10px; }
+.project h3 { font-family: var(--font-display); font-weight: 700; font-size: 24px; margin: 0; display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+.tag { font-family: var(--font-mono); font-size: 12px; font-weight: 500; letter-spacing: .04em; padding: 3px 9px; border-radius: 999px; background: var(--ok-soft); color: var(--ok); }
+.tag.plan { background: var(--accent-soft); color: var(--accent); }
+.project p { margin: 0; color: var(--muted); }
+.project .btn { justify-self: start; margin-top: 4px; }
+.subhead { font-family: var(--font-display); font-weight: 700; font-size: 18px; margin: 30px 0 4px; }
+.subnote { color: var(--muted); font-size: 15px; margin: 0 0 14px; max-width: 40em; }
+.planned { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 14px; }
+.planned .project { padding: 16px 18px; gap: 6px; border-style: dashed; background: transparent; }
+.planned h3 { font-size: 18px; }
+.planned p { font-size: 15px; }
+
+/* Experiência e formação */
+.entry { padding-block: 0 22px; }
+.entry:last-child { padding-bottom: 0; }
+.entry h3 { font-family: var(--font-display); font-weight: 700; font-size: 20px; margin: 0; display: flex; flex-wrap: wrap; gap: 4px 12px; align-items: baseline; }
+.entry .meta { color: var(--muted); font-size: 15px; margin: 2px 0 8px; }
+.entry ul { margin: 0; padding-left: 20px; max-width: 40em; }
+.entry li { margin-bottom: 4px; }
+
+/* Cardápio de habilidades */
+.menu { list-style: none; margin: 0 0 8px; padding: 0; max-width: 40em; }
+.menu li { display: flex; align-items: baseline; gap: 10px; padding-block: 5px; }
+.menu .name { font-weight: 600; }
+.menu .dots { flex: 1; min-width: 16px; border-bottom: 2px dotted var(--muted); opacity: .45; transform: translateY(-4px); }
+.menu .val { font-family: var(--font-mono); font-size: 14px; color: var(--muted); text-align: right; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; list-style: none; }
+.chips li { border: 1px solid var(--line); background: var(--surface); border-radius: 999px; padding: 4px 14px; font-size: 15px; }
+
+footer { border-top: 1px solid var(--line); padding-block: 22px 8px; color: var(--muted); font-size: 14px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 20px; }
+
+@media (max-width: 720px) {
+  .wrap { padding-block: 36px 28px; }
+  section { grid-template-columns: minmax(0, 1fr); gap: 8px; padding-block: 28px; }
+  section > h2 { margin: 0 0 4px; }
+  .project { padding: 18px; }
+}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header>
+    <p class="eyebrow">Engenharia de Software · Rio Verde, GO</p>
+    <h1>Luis Gustavo Prata Braga Saldanha</h1>
+    <p class="lead">Estudante do 5º período em busca de estágio ou posição júnior em desenvolvimento de software, com interesse em back-end, front-end, full stack e dados.</p>
+    <ul class="status" aria-label="Disponibilidade">
+      <li>Estágio</li><li>Vaga júnior</li><li>Trabalho remoto</li><li>Freelancer</li>
+    </ul>
+    <div class="actions">
+      <a class="btn primary" href="https://www.linkedin.com/in/luis-gustavo-prata-braga-saldanha-052410285" target="_blank" rel="noopener">Ver LinkedIn</a>
+      <a class="btn ghost" href="#projetos">Ver projetos</a>
+    </div>
+  </header>
+
+  <section id="sobre">
+    <h2>Sobre</h2>
+    <div class="body">
+      <p>Minha trajetória inclui experiências em atendimento e administração: atuei como auxiliar administrativo, como garçom e, atualmente, sou maître de buffet. Essas atividades desenvolveram competências que levo para a tecnologia, como comunicação clara, trabalho em equipe, organização e capacidade de resolver problemas sob pressão.</p>
+      <p>Sigo um plano de estudos estruturado de 15 meses, com prática diária e um projeto por mês. Começo por Python e avanço para JavaScript e Java, passando por bancos de dados, APIs e testes automatizados. Tenho inglês em nível intermediário.</p>
+      <p>Busco integrar uma equipe na qual possa contribuir, aprender continuamente e evoluir como desenvolvedor.</p>
+    </div>
+  </section>
+
+  <section id="projetos">
+    <h2>Projetos</h2>
+    <div class="body">
+      <article class="project">
+        <h3>AgendaMed <span class="tag">publicado</span></h3>
+        <p>Aplicação web publicada online. O primeiro acesso pode levar alguns segundos para carregar.</p>
+        <a class="btn ghost" href="https://agendamed-6pfk.onrender.com" target="_blank" rel="noopener">Abrir projeto online</a>
+      </article>
+
+      <h3 class="subhead">Próximos projetos</h3>
+      <p class="subnote">Parte do meu plano de estudos. Cada projeto entra aqui, com link do código, quando for concluído.</p>
+      <div class="planned">
+        <article class="project"><h3>Calculadora com menu <span class="tag plan">planejado</span></h3><p>Python, funções e validação de entradas. Mês 1.</p></article>
+        <article class="project"><h3>API de tarefas <span class="tag plan">planejado</span></h3><p>Python, FastAPI e banco de dados. Mês 5.</p></article>
+        <article class="project"><h3>Aplicação full stack <span class="tag plan">planejado</span></h3><p>React, Node.js e banco de dados, publicada online. Mês 10.</p></article>
+        <article class="project"><h3>API REST com Spring Boot <span class="tag plan">planejado</span></h3><p>Java, autenticação, validação e testes. Mês 14.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="experiencia">
+    <h2>Experiência</h2>
+    <div class="body">
+      <div class="entry">
+        <h3>Maître de Buffet <span class="tag">atual</span></h3>
+        <p class="meta">Rio Verde, GO</p>
+        <ul>
+          <li>Coordenação do atendimento e do fluxo de serviço do buffet, assegurando a qualidade da operação.</li>
+          <li>Relacionamento direto com clientes e resolução ágil de imprevistos em ambiente de alta demanda.</li>
+        </ul>
+      </div>
+      <div class="entry">
+        <h3>Garçom <span class="tag">atual</span></h3>
+        <p class="meta">Rio Verde, GO</p>
+        <ul>
+          <li>Atendimento ao cliente, com foco em comunicação clara e agilidade.</li>
+          <li>Atuação em equipe em ambiente de ritmo intenso.</li>
+        </ul>
+      </div>
+      <div class="entry">
+        <h3>Auxiliar Administrativo</h3>
+        <p class="meta">Conquista Supermercados · Rio Verde, GO</p>
+        <ul>
+          <li>Apoio às rotinas administrativas, com organização de informações e documentos.</li>
+          <li>Controle de prazos, com atenção aos detalhes.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="formacao">
+    <h2>Formação</h2>
+    <div class="body">
+      <div class="entry">
+        <h3>Bacharelado em Engenharia de Software</h3>
+        <p class="meta">Estácio · conclusão prevista em dezembro de 2028</p>
+        <ul><li>Cursando o 5º período.</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="habilidades">
+    <h2>Habilidades</h2>
+    <div class="body">
+      <p class="subnote" style="margin-top:0">Tecnologias em estudo, com o mês do plano em que cada uma entra.</p>
+      <ul class="menu">
+        <li><span class="name">Git e GitHub</span><span class="dots" aria-hidden="true"></span><span class="val">mês 1</span></li>
+        <li><span class="name">Python</span><span class="dots" aria-hidden="true"></span><span class="val">meses 1 a 6</span></li>
+        <li><span class="name">SQL e bancos de dados</span><span class="dots" aria-hidden="true"></span><span class="val">meses 5 e 13</span></li>
+        <li><span class="name">JavaScript</span><span class="dots" aria-hidden="true"></span><span class="val">meses 7 a 10</span></li>
+        <li><span class="name">Java</span><span class="dots" aria-hidden="true"></span><span class="val">meses 11 a 15</span></li>
+      </ul>
+      <h3 class="subhead">Competências</h3>
+      <ul class="chips">
+        <li>Comunicação</li><li>Trabalho em equipe</li><li>Organização</li><li>Resolução de problemas</li><li>Atendimento ao cliente</li><li>Trabalho sob pressão</li>
+      </ul>
+      <h3 class="subhead">Idiomas</h3>
+      <ul class="menu">
+        <li><span class="name">Português</span><span class="dots" aria-hidden="true"></span><span class="val">nativo</span></li>
+        <li><span class="name">Inglês</span><span class="dots" aria-hidden="true"></span><span class="val">intermediário</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="contato">
+    <h2>Contato</h2>
+    <div class="body">
+      <p>Vamos conversar sobre oportunidades de estágio, vagas júnior ou projetos.</p>
+      <div class="actions">
+        <span class="mail"><code id="email">luisgustavo.prata@gmail.com</code><button type="button" id="copy" aria-label="Copiar e-mail">Copiar e-mail</button></span>
+        <a class="btn primary" href="https://www.linkedin.com/in/luis-gustavo-prata-braga-saldanha-052410285" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span>Luis Gustavo Prata Braga Saldanha</span>
+    <span>Atualizado em outubro de 2026</span>
+  </footer>
+</div>
+
+<script>
+(function () {
+  var btn = document.getElementById('copy');
+  var el = document.getElementById('email');
+  function select() {
+    try {
+      var r = document.createRange(); r.selectNodeContents(el);
+      var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+    } catch (e) {}
+  }
+  btn.addEventListener('click', function () {
+    var done = function () { btn.textContent = 'Copiado'; setTimeout(function () { btn.textContent = 'Copiar e-mail'; }, 1800); };
+    var fail = function () { select(); btn.textContent = 'Selecionado: use Ctrl+C'; setTimeout(function () { btn.textContent = 'Copiar e-mail'; }, 2500); };
+    try {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(el.textContent.trim()).then(done, fail);
+      } else { fail(); }
+    } catch (e) { fail(); }
+  });
+})();
+</script>
+</body>
+</html>
